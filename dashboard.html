@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button class="current">
+            <img class="current-nav-icon" src="img/dashboard.png" alt="Dashboard">Dashboard</button>
+          <button class="current">
+            <img class="nav-icon" src="img/vector.svg" alt="Map">Map</button>
+        <button class="current">
+          <img class="nav-icon" src="img/vector-1.svg" alt="Logout">Log Out</button>
+        <button class="current">
+          <img class="nav-icon" src="img/vector-2.svg" alt="Settings">Settings</button>
+        <button class="current">
+        <img class="nav-icon" src="img/group-104.png" alt="Share">Share</button>
+        <button class="current">
+            <img class="nav-icon" src="img/logout.svg" alt="Log Out">Log Out</button>
+    </nav>
+  <header class="header">
+    <div class="greeting-message">
+        <img src="img/group-8.png" alt="Sun"/>
+        <h1>Good Morning, Rayan!</h1>
+    </div>    
+    <time datetime="2024-02-11">Sunday, 11 February 2024</time>
+    <form class="search" role="search">
+        <input id="search-location" class="search-location" placeholder="Search Location" type="submit" aria-label="Search for a location">
+        <button type="submit" aria-label="Search">
+          <img src="img/search.png" alt="Search">
+        </button>
+    </form>
+    <img class="profile" src="img/profile.svg" alt="User Profile">
+  </header>
+
+  <aside class="ten-forecast">
+    <div class="next-days-header">
+      <img class="back-icon" src="img/back.svg" alt="Previous">
+      <h2 class="next-days-title">Next 10 Days</h2>
+      <img class="forward-icon" src="img/forward.svg" alt="Next">
+    </div>
+  
+    <div class="daily-forecast">
+      <div class="day-forecast">
+        <div class="date">
+          <h3 class="day">Today</h3>
+          <time datetime="2024-02-11">11 Feb</time>
+        </div>
+        <img class="weather-icon" src="img/sun-cloud.svg" alt="Partly Cloudy">
+        <div class="temperatures">
+          <span class="high">12°</span>
+          <span class="low">5°</span>
+        </div>
+      </div>
+      <hr>
+  
+      <div class="day-forecast">
+        <div class="date">
+          <h3 class="day">Mon</h3>
+          <time datetime="2024-02-12">12 Feb</time>
+        </div>
+        <img class="weather-icon" src="img/rain.svg" alt="Rainy">
+        <div class="temperatures">
+          <span class="high">22°</span>
+          <span class="low">17°</span>
+        </div>
+      </div>
+      <hr>
+  
+      <div class="day-forecast">
+        <div class="date">
+          <h3 class="day">Tue</h3>
+          <time datetime="2024-02-13">13 Feb</time>
+        </div>
+        <img class="weather-icon" src="img/icon-sunny-4.svg" alt="Sunny">
+        <div class="temperatures">
+          <span class="high">21°</span>
+          <span class="low">15°</span>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </aside>
+  
+
+  <main class="dashboard">
+    <!-- Dashboard content goes here -->
+  </main>
+
+</body>
+</html>

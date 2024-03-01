@@ -1,0 +1,32 @@
+:root {
+  --tile: rgba(29, 40, 55, 1);
+  --tileoutline: rgba(255, 255, 255, 0.15);
+  --summary-tile: rgba(2, 199, 57, 0.2);
+  --highlight: rgba(29, 40, 55, 1);
+  --material-themesyslightsurface: rgba(255, 251, 255, 1);
+  --temp-font-family: "Inter", Helvetica;
+  --temp-font-weight: 400;
+  --temp-font-size: 15.699999809265137px;
+  --temp-letter-spacing: 0px;
+  --temp-line-height: 18.79517936706543px;
+  --temp-font-style: normal;
+  --tile-headings-font-family: "Inter", Helvetica;
+  --tile-headings-font-weight: 500;
+  --tile-headings-font-size: 16px;
+  --tile-headings-letter-spacing: 0.15000000596046448px;
+  --tile-headings-line-height: 24px;
+  --tile-headings-font-style: normal;
+  --bold-label-font-family: "Inter", Helvetica;
+  --bold-label-font-weight: 700;
+  --bold-label-font-size: 15px;
+  --bold-label-letter-spacing: 0px;
+  --bold-label-line-height: normal;
+  --bold-label-font-style: normal;
+  --label-font-family: "Inter", Helvetica;
+  --label-font-weight: 500;
+  --label-font-size: 15px;
+  --label-letter-spacing: 0px;
+  --label-line-height: normal;
+  --label-font-style: normal;
+  --tile-effect: 0px 6px 20px 0px rgba(0, 0, 0, 0.2);
+}
