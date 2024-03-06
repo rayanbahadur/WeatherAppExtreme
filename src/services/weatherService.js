@@ -1,62 +1,117 @@
 import { DateTime } from "luxon";
 
-const API_KEY = '23ba4daaf93ee115a0ab849a158fe6c5';
-const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+const BASE_URL = "http://api.weatherapi.com/v1";
 
-const getWeatherData = (infoType, searchParams) => {
-    const url = new URL (BASE_URL + '/' + infoType);
-    url.search = new URLSearchParams({...searchParams, appid:API_KEY})
+const fetchData = (apiMethod, searchParams) => {
+  const url = new URL(BASE_URL + "/" + apiMethod + ".json");
+  url.search = new URLSearchParams({ key: API_KEY, ...searchParams });
 
-    return fetch(url)
-    .then((res) => res.json())
+  return fetch(url).then((res) => res.json());
 };
 
-const formatCurrentWeather = (data) => {
-    const {
-        coord: {lat, lon},
-        main: {temp, feels_like, humidity, temp_min, temp_max},
-        name,
-        dt, 
-        sys: {country, sunrise, sunset},
-        weather,
-        wind: {speed},
-    } = data
+export const getFormattedWeatherData = async (city) => {
+  const formattedWeather = await fetchData("forecast", {
+    q: city,
+    days: 10,
+  }).then(formatForecastWeather);
 
-    const {main: details, icon} = weather[0]
-    return {lat, lon, temp, feels_like, humidity, temp_min, temp_max, name, dt, country, sunrise, sunset, details, icon, speed}
-}
+  return formattedWeather;
+};
+
 const formatForecastWeather = (data) => {
-    let {timezone, daily, hourly} = data;
-    if (daily) {
-        daily = daily.slice(1,6).map(d => {
-            return {
-                title: formatToLocalTime(d.dt, timezone, 'ccc'),
-                temp: d.temp.day,
-                icon: d.weather[0].icon
-            }
-        }); //Shows the next 5 days
-    }
-    if (hourly){
-        hourly = hourly.slice(1,6).map(d => {
-            return {
-                title: formatToLocalTime(d.dt, timezone, 'hh:mm a'),
-                temp: d.temp,
-                icon: d.weather[0].icon
-            }
-        }); //Shows the next 5 hours
-    }
-return {timezone, daily, hourly};
+  const {
+    location: {
+      name: loc_name,
+      country: loc_country,
+      localtime_epoch: loc_epoch,
+      tz_id: loc_tz,
+    },
+    forecast: { forecastday },
+    current: {
+      condition: { icon: condition_icon, text: condition_text },
+      feelslike_c,
+      feelslike_f,
+      humidity,
+      temp_c,
+      temp_f,
+      wind_kph,
+      wind_mph,
+      is_day,
+    },
+  } = data;
+
+  const locDateTime = formatToLocalTime(loc_epoch, loc_tz);
+
+  return {
+    loc_name,
+    loc_country,
+    locDateTime,
+    condition_text,
+    condition_icon: formatIconUrl(condition_icon),
+    feelslike_c,
+    feelslike_f,
+    humidity,
+    temp_c,
+    temp_f,
+    wind_kph,
+    wind_mph,
+    is_day,
+    ...formatAstroData(forecastday),
+    dailyForecast: formatDailyForecast(forecastday, loc_tz),
+    hourlyForecast: formatHourlyForecast(forecastday, loc_epoch, loc_tz),
+  };
 };
 
-const getFormattedWeatherData = async (searchParams) => {
-    const formattedCurrentWeather = await getWeatherData('weather', searchParams).then(formatCurrentWeather);
-    const {lon, lat} = formattedCurrentWeather;
-    const formattedForecastWeather = await getWeatherData('onecall', {lat, lon, exclude:'current, minutely, alerts', units:searchParams.units}).then(formatForecastWeather);
-
-    return {...formattedCurrentWeather, ...formattedForecastWeather};
+const formatIconUrl = (iconUrl) => {
+  return "https:" + iconUrl;
 };
 
-const formatToLocalTime = (secs, zone, format = "cccc, dd, LLL, yyyy' | Local time: 'hh:mm:ss a") => DateTime.fromSeconds(secs, {zone}).toFormat(format);
-const iconUrlFromCode = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`;
-export default getFormattedWeatherData;
-export {formatToLocalTime, iconUrlFromCode};
+const formatHourlyForecast = (forecast, loc_epoch, timezone) => {
+  let hourlyForecast = forecast.slice(0, 2).map(({ hour }) => hour);
+  hourlyForecast = [...hourlyForecast[0], ...hourlyForecast[1]];
+  hourlyForecast = hourlyForecast.filter(
+    (forecast) => forecast.time_epoch > loc_epoch
+  );
+  hourlyForecast = hourlyForecast
+    .slice(1, 6)
+    .map(({ temp_c, temp_f, time_epoch, condition: { icon } }) => {
+      return {
+        temp_c,
+        temp_f,
+        icon: formatIconUrl(icon),
+        title: formatToLocalTime(time_epoch, timezone, "hh:mm a"),
+      };
+    });
+
+  return hourlyForecast;
+};
+
+const formatDailyForecast = (forecast, timezone) => {
+  const dailyForecast = forecast.map(({ date_epoch, day }) => {
+    return {
+      title: formatToLocalTime(date_epoch, timezone, "ccc"),
+      temp_c: day.avgtemp_c,
+      temp_f: day.avgtemp_f,
+      icon: formatIconUrl(day.condition.icon),
+    };
+  });
+
+  return dailyForecast;
+};
+
+const formatAstroData = (forecast) => {
+  const {
+    astro: { sunrise, sunset, moonrise, moonset },
+  } = forecast[0];
+
+  return { sunrise, sunset, moonrise, moonset };
+};
+
+const formatToLocalTime = (
+  epoch,
+  timezone,
+  format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
+) => {
+  return DateTime.fromSeconds(epoch).setZone(timezone).toFormat(format);
+};
