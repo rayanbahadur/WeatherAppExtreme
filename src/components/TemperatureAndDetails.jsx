@@ -1,5 +1,5 @@
 import React from "react";
-import { BsThermometerHalf, BsCloudSun } from "react-icons/bs";
+import { BsThermometerHalf} from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { FiWind } from "react-icons/fi";
 import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
@@ -48,7 +48,7 @@ const TemperatureAndDetails = ({
     {
       id: 1,
       icon: BsThermometerHalf,
-      text: "real fell",
+      text: "real feel",
       data: `${unit === "c" ? feelslike_c : feelslike_f}°`,
     },
     {

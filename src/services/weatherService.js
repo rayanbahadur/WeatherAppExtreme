@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+const API_KEY = "2042a88d3bdb435d80a162232240603";
 const BASE_URL = "http://api.weatherapi.com/v1";
 
 const fetchData = (apiMethod, searchParams) => {
