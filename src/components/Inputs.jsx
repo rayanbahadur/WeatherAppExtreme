@@ -27,7 +27,7 @@ const Inputs = ({ setCity, unit, setUnit }) => {
 
   return (
     <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-2/5 items-center justify-center space-x-4">
+      <div className="flex flex-row items-center justify-center space-x-4 mx-2">
         <input
           type="text"
           placeholder="Search Location"
@@ -47,15 +47,15 @@ const Inputs = ({ setCity, unit, setUnit }) => {
         />
       </div>
 
-      <div className="flex flex-row w-1/5 items-center justify-center">
+      <div className="flex flex-row items-center justify-center mx-2">
         <button
           onClick={() => setUnit(unit === "c" ? "f" : "c")}
-          className="text-l font-light border rounded-md px-5 py-1 transition hover:scale-105"
+          className="text-l font-light border rounded-md px-3 py-1 transition hover:scale-105"
         >
           {`°${unit === "c" ? "F" : "C"}`}
         </button>
       </div>
-      <div className="flex flex-row w-2/5 items-center justify-center space-x-4">
+      <div className="flex flex-row  items-center justify-center space-x-4 mx-">
         {error && <p>Authentication Error</p>}
           {!error && isLoading && <p>Loading...</p>}
           {!error && !isLoading && (
