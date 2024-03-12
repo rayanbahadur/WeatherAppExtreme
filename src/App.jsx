@@ -4,10 +4,18 @@ import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import Forecast from "./components/Forecast";
+import DashboardImage from "./assets/Dashboard.png";
+import MapImage from "./assets/Map.png";
+import DownloadImage from "./assets/Download.png";
+import SettingsImage from "./assets/Settings.png";
+
 import { getFormattedWeatherData } from "./services/weatherService";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// Import the CSS file
+import "./App.css";
 
 const App = () => {
   const [city, setCity] = useState("Whitechapel");
@@ -24,41 +32,69 @@ const App = () => {
     fetchWeather();
   }, [city, unit]);
 
-  const formatBackground = () => {
-    if (!weather) return "from-cyan-700 to-blue-700";
-    return weather.is_day
-      ? "from-yellow-700 to-orange-700"
-      : "from-cyan-700 to-blue-700";
-  };
-
   return (
-    <div
-      className={`max-w-screen-md mx-auto mt-4 py-5 px-32 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl shadow-gray-400 rounded-lg`}
-    >
-      <TopButtons setCity={setCity} />
-      <Inputs setCity={setCity} unit={unit} setUnit={setUnit} />
-
-      {weather && (
-        <>
-          <TimeAndLocation weather={weather} />
-          <TemperatureAndDetails weather={weather} unit={unit} />
-
-          <Forecast
-            title="hourly forecast"
-            unit={unit}
-            forecast={weather.hourlyForecast}
-          />
-          <Forecast
-            title="daily forecast"
-            unit={unit}
-            forecast={weather.dailyForecast}
-          />
-        </>
-      )}
-
-      <ToastContainer autoClose={5000} theme="colored" newestOnTop={true} />
+    <div>
+      <body>
+        <nav>
+          <ul id="menu">
+            <li class="menuItems"><a href="#"><img src={DashboardImage} alt="" /><div>Dashboard</div></a></li>
+            <li class="menuItems"><a href="#"><img src={MapImage} alt="" /><div>Map</div></a></li>
+            <li class="menuItems"><a href="#"><img src={DownloadImage} alt="" /><div>Offline</div></a></li>
+            <li class="menuItems"><a href="#"><img src={SettingsImage} alt="" /><div>Settings</div></a></li>
+          </ul>
+          <ul id="extra">
+            <li>Share</li>
+            <li>Logout</li>
+          </ul>
+        </nav>
+        <article>
+          <div id="topBar">Welcome!</div>
+          <section id="main">
+            <div id="overview">A</div>
+            <div id="info">B</div>
+            <div id="forecast">C</div>
+            <div id="graph">D</div>
+            <div id="rain">E</div>
+            <div id="future">F</div>
+          </section>
+        </article>
+      </body>
     </div>
   );
+
+  // const formatBackground = () => {
+  //   if (!weather) return "from-cyan-700 to-blue-700";
+  //   return weather.is_day
+  //     ? "from-yellow-700 to-orange-700"
+  //     : "from-cyan-700 to-blue-700";
+
+  // };
+  // return (
+  //   <div className={`app-container ${formatBackground()}`}>
+  //     {/* <TopButtons setCity={setCity} />
+  //     <Inputs setCity={setCity} unit={unit} setUnit={setUnit} /> */}
+
+  //     {/* {weather && (
+  //       <>
+  //         <TimeAndLocation weather={weather} />
+  //         <TemperatureAndDetails weather={weather} unit={unit} />
+
+  //         <Forecast
+  //           title="hourly forecast"
+  //           unit={unit}
+  //           forecast={weather.hourlyForecast}
+  //         />
+  //         <Forecast
+  //           title="daily forecast"
+  //           unit={unit}
+  //           forecast={weather.dailyForecast}
+  //         />
+  //       </>
+  //     )} */}
+
+  //     {/* <ToastContainer autoClose={5000} theme="colored" newestOnTop={true} /> */}
+  //   </div>
+  // );
 };
 
 export default App;
