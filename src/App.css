@@ -28,6 +28,23 @@ body {
     height: 100vh; /* Ensure full height */
 }
 
+#topLine, #midLine, #bottomLine {
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    float: left;
+}
+
+#topLine, #midLine {
+    margin-bottom: 0.5rem;
+}
+
+#hamburger {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
     background-color: #1B1B1D;
     padding: 2rem;
@@ -48,13 +65,16 @@ li {
 }
 
 .menuItems img {
-    margin-right: 5px; /* Add some spacing between image and text */
+    margin-right: 1rem; /* Add some spacing between image and text */
 }
 
 .menuItems a {
     color: white; /* Set text color */
     text-decoration: none; /* Remove underline */
+    display: flex; /* Ensure the anchor element is flex */
+    align-items: center; /* Align items vertically */
 }
+
 
 
 #menu {

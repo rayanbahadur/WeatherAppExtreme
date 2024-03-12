@@ -8,6 +8,8 @@ import DashboardImage from "./assets/Dashboard.png";
 import MapImage from "./assets/Map.png";
 import DownloadImage from "./assets/Download.png";
 import SettingsImage from "./assets/Settings.png";
+import ShareImage from "./assets/Share.png"
+import LogoutImage from "./assets/Logout.png"
 
 import { getFormattedWeatherData } from "./services/weatherService";
 
@@ -37,20 +39,33 @@ const App = () => {
       <body>
         <nav>
           <ul id="menu">
+            <li id="hamburger">
+              <div id="topLine"></div>
+              <div id="midLine"></div>
+              <div id="bottomLine"></div>
+            </li>
             <li class="menuItems"><a href="#"><img src={DashboardImage} alt="" /><div>Dashboard</div></a></li>
             <li class="menuItems"><a href="#"><img src={MapImage} alt="" /><div>Map</div></a></li>
             <li class="menuItems"><a href="#"><img src={DownloadImage} alt="" /><div>Offline</div></a></li>
             <li class="menuItems"><a href="#"><img src={SettingsImage} alt="" /><div>Settings</div></a></li>
           </ul>
           <ul id="extra">
-            <li>Share</li>
-            <li>Logout</li>
+            <li class="menuItems"><a href="#"><img src={DownloadImage} alt="" /><div>Share</div></a></li>
+            <li class="menuItems"><a href="#"><img src={SettingsImage} alt="" /><div>Logout</div></a></li>
           </ul>
         </nav>
         <article>
           <div id="topBar">Welcome!</div>
           <section id="main">
-            <div id="overview">A</div>
+            <div id="overview">
+              A
+              {/* {weather && (
+                <>
+                  <TimeAndLocation weather={weather} />
+                  <TemperatureAndDetails weather={weather} unit={unit} />
+                </>
+              )} */}
+            </div>
             <div id="info">B</div>
             <div id="forecast">C</div>
             <div id="graph">D</div>
@@ -71,10 +86,10 @@ const App = () => {
   // };
   // return (
   //   <div className={`app-container ${formatBackground()}`}>
-  //     {/* <TopButtons setCity={setCity} />
-  //     <Inputs setCity={setCity} unit={unit} setUnit={setUnit} /> */}
+  //     <TopButtons setCity={setCity} />
+  //     <Inputs setCity={setCity} unit={unit} setUnit={setUnit} />
 
-  //     {/* {weather && (
+  //     {weather && (
   //       <>
   //         <TimeAndLocation weather={weather} />
   //         <TemperatureAndDetails weather={weather} unit={unit} />
@@ -90,7 +105,7 @@ const App = () => {
   //           forecast={weather.dailyForecast}
   //         />
   //       </>
-  //     )} */}
+  //     )}
 
   //     {/* <ToastContainer autoClose={5000} theme="colored" newestOnTop={true} /> */}
   //   </div>
