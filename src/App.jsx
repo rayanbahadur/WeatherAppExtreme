@@ -8,6 +8,7 @@ import { getFormattedWeatherData } from "./services/weatherService";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Map from "./components/Map";
 
 const App = () => {
   const [city, setCity] = useState("Whitechapel");
@@ -53,6 +54,7 @@ const App = () => {
             unit={unit}
             forecast={weather.dailyForecast}
           />
+          <Map weather = {weather}/>
         </>
       )}
 

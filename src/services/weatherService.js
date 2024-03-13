@@ -24,6 +24,8 @@ const formatForecastWeather = (data) => {
     location: {
       name: loc_name,
       country: loc_country,
+      lat: loc_lat,
+      lon: loc_lon,
       localtime_epoch: loc_epoch,
       tz_id: loc_tz,
     },
@@ -46,6 +48,8 @@ const formatForecastWeather = (data) => {
   return {
     loc_name,
     loc_country,
+    loc_lat,
+    loc_lon,
     locDateTime,
     condition_text,
     condition_icon: formatIconUrl(condition_icon),
