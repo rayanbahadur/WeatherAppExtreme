@@ -9,8 +9,9 @@ import DashboardImage from "./assets/Dashboard.png";
 import MapImage from "./assets/Map.png";
 import DownloadImage from "./assets/Download.png";
 import SettingsImage from "./assets/Settings.png";
-import ShareImage from "./assets/Share.png"
-import LogoutImage from "./assets/Logout.png"
+import ShareImage from "./assets/Share.png";
+import LogoutImage from "./assets/Logout.png";
+import SunriseImage from "./assets/Sunrise.svg";
 
 import { getFormattedWeatherData } from "./services/weatherService";
 
@@ -56,24 +57,9 @@ const App = () => {
           </ul>
         </nav>
         <article>
-          <div id="topBar">Welcome!</div>
-          <section id="main">
-            <div id="overview">
-              {weather && (
                 <>
                   <TimeAndLocation weather={weather} />
-                  <TemperatureAndDetails weather={weather} unit={unit} />
                 </>
-              )}
-            </div>
-            <div id="info">B</div>
-            <div id="forecast">
-              {weather && (
-                  <>
-                    <Details weather={weather} unit={unit}/>
-                  </>
-                )}
-            </div>
             <div id="graph">D</div>
             <div id="rain">E</div>
             <div id="future">F</div>
