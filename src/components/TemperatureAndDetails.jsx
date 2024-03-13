@@ -1,5 +1,6 @@
 import React from "react";
-import { BsThermometerHalf} from "react-icons/bs";
+import "./TemperatureAndDetails.css"; // Import your CSS file
+import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { FiWind } from "react-icons/fi";
 import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
@@ -7,10 +8,10 @@ import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
 function RenderDetail(props) {
   const Icon = props.icon;
   return (
-    <div className="flex font-light text-sm items-center justify-center">
-      <Icon size={20} className="mr-1" />
-      <span className="capitalize">{`${props.text} :`}</span>
-      <span className="font-medium ml-1">{`${props.data}`}</span>
+    <div className="detail-item">
+      <Icon className="detail-icon" size={20} />
+      <span className="detail-text">{`${props.text} :`}</span>
+      <span className="detail-data">{props.data}</span>
     </div>
   );
 }
@@ -18,10 +19,10 @@ function RenderDetail(props) {
 function RenderVerticalDetail(props) {
   const Icon = props.icon;
   return (
-    <div className="flex flex-col justify-center items-start">
+    <div className="detail-item">
       <Icon size={45} />
-      <p className="font-medium mt-1 capitalize">{props.text}</p>
-      <p className="font-medium">{props.data}</p>
+      <p className="detail-text">{props.text}</p>
+      <p className="detail-data">{props.data}</p>
     </div>
   );
 }
@@ -55,7 +56,7 @@ const TemperatureAndDetails = ({
       id: 2,
       icon: MdOutlineWaterDrop,
       text: "humidity",
-      data: humidity + " %",
+      data: `${humidity}%`,
     },
     {
       id: 3,
@@ -94,28 +95,27 @@ const TemperatureAndDetails = ({
 
   return (
     <div>
-      <div className="flex items-center justify-center py-6 text-left text-cyan-300">
-        <p>{condition_text}</p>
-      </div>
+      <div className="weather-condition">{condition_text}</div>
 
-      <div className="flex flex-row items-center justify-between   py-3">
-        <img className="w-20" src={condition_icon} alt="///" />
+      <div className="temperature-details">
+        <img className="weather-icon" src={condition_icon} alt="weather icon" />
 
-        <p className="text-5xl">
+        <p className="temperature">
           {unit === "c" ? temp_c : temp_f}
           <sup>°{unit === "c" ? "C" : "F"}</sup>
         </p>
-        <div className="flex flex-col items-start space-y-2">
+
+        {/* <div className="horizontal-details">
           {horizontalDetails.map(({ id, icon, text, data }) => (
             <RenderDetail key={id} icon={icon} text={text} data={data} />
           ))}
         </div>
-      </div>
 
-      <div className="flex flex-row items-center justify-between space-x-2   text-sm py-3">
-        {verticalDetails.map(({ id, icon, text, data }) => (
-          <RenderVerticalDetail key={id} icon={icon} text={text} data={data} />
-        ))}
+        <div className="vertical-details">
+          {verticalDetails.map(({ id, icon, text, data }) => (
+            <RenderVerticalDetail key={id} icon={icon} text={text} data={data} />
+          ))}
+        </div> */}
       </div>
     </div>
   );

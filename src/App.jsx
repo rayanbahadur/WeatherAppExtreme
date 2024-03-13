@@ -3,6 +3,7 @@ import TopButtons from "./components/topButtons";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import Details from "./components/Details";
 import Forecast from "./components/Forecast";
 import DashboardImage from "./assets/Dashboard.png";
 import MapImage from "./assets/Map.png";
@@ -56,36 +57,9 @@ const App = () => {
           </ul>
         </nav>
         <article>
-          <div id="topBar">
-            {weather && (
                 <>
                   <TimeAndLocation weather={weather} />
                 </>
-            )} 
-          </div>
-          <section id="main">
-            <div id="overview">
-              A
-              
-            </div>
-            <div id="info">
-              <div class="infoTile">
-                <p class="infoTitle">Sunrise</p>
-                <div class="infoContent">
-                  <img src= {SunriseImage} alt="sunrise icon" id="infoIcon" />
-                  <p class="infoTime">04:20</p>
-                </div>
-              </div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-              <div class="infoTile">B</div>
-            </div>
-            <div id="forecast">C</div>
             <div id="graph">D</div>
             <div id="rain">E</div>
             <div id="future">F</div>
