@@ -8,8 +8,9 @@ import DashboardImage from "./assets/Dashboard.png";
 import MapImage from "./assets/Map.png";
 import DownloadImage from "./assets/Download.png";
 import SettingsImage from "./assets/Settings.png";
-import ShareImage from "./assets/Share.png"
-import LogoutImage from "./assets/Logout.png"
+import ShareImage from "./assets/Share.png";
+import LogoutImage from "./assets/Logout.png";
+import SunriseImage from "./assets/Sunrise.svg";
 
 import { getFormattedWeatherData } from "./services/weatherService";
 
@@ -66,7 +67,23 @@ const App = () => {
                 </>
               )} */}
             </div>
-            <div id="info">B</div>
+            <div id="info">
+              <div class="infoTile">
+                <p class="infoTitle">Sunrise</p>
+                <div class="infoContent">
+                  <img src= {SunriseImage} alt="sunrise icon" id="infoIcon" />
+                  <p class="infoTime">04:20</p>
+                </div>
+              </div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+              <div class="infoTile">B</div>
+            </div>
             <div id="forecast">C</div>
             <div id="graph">D</div>
             <div id="rain">E</div>

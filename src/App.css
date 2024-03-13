@@ -130,6 +130,41 @@ article {
     grid-area: info;
     background-color: #121212;
     border-radius: 10px;
+    gap: 10px;
+    display: grid;
+    grid-template-areas: "infoTile infoTile infoTile";
+}
+  
+
+.infoTile {
+    background-color: #000;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid #ffffff26;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.infoTitle {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: #ffffffb3;
+}
+
+.infoContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.infoTime {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
 }
 
 #forecast {
