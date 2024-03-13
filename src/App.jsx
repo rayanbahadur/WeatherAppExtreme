@@ -56,16 +56,17 @@ const App = () => {
           </ul>
         </nav>
         <article>
-          <div id="topBar">Welcome!</div>
+          <div id="topBar">
+            {weather && (
+                <>
+                  <TimeAndLocation weather={weather} />
+                </>
+            )} 
+          </div>
           <section id="main">
             <div id="overview">
               A
-              {/* {weather && (
-                <>
-                  <TimeAndLocation weather={weather} />
-                  <TemperatureAndDetails weather={weather} unit={unit} />
-                </>
-              )} */}
+              
             </div>
             <div id="info">
               <div class="infoTile">

@@ -5,12 +5,9 @@ const TimeAndLocation = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center justify-center my-6 ">
-        <p className="  text-xl font-extralight">{locDateTime}</p>
-      </div>
-
-      <div className="flex items-center justify-center my-3">
+      <div className="flex items-center justify-center my-6 space-x-20">
         <p className="  text-3xl font-medium">{`${loc_name}, ${loc_country}`}</p>
+        <p className="  text-xl font-extralight">{locDateTime}</p>
       </div>
     </div>
   );
