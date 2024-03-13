@@ -3,6 +3,7 @@ import TopButtons from "./components/topButtons";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import Details from "./components/Details";
 import Forecast from "./components/Forecast";
 import DashboardImage from "./assets/Dashboard.png";
 import MapImage from "./assets/Map.png";
@@ -58,16 +59,21 @@ const App = () => {
           <div id="topBar">Welcome!</div>
           <section id="main">
             <div id="overview">
-              A
-              {/* {weather && (
+              {weather && (
                 <>
                   <TimeAndLocation weather={weather} />
                   <TemperatureAndDetails weather={weather} unit={unit} />
                 </>
-              )} */}
+              )}
             </div>
             <div id="info">B</div>
-            <div id="forecast">C</div>
+            <div id="forecast">
+              {weather && (
+                  <>
+                    <Details weather={weather} unit={unit}/>
+                  </>
+                )}
+            </div>
             <div id="graph">D</div>
             <div id="rain">E</div>
             <div id="future">F</div>

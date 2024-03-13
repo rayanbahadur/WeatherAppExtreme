@@ -62,6 +62,7 @@ li {
 .menuItems {
     display: flex;
     align-items: center; /* Align items vertically */
+    font-size: 1.5rem;
 }
 
 .menuItems img {
@@ -104,8 +105,6 @@ article {
     display: grid;
     grid-template-areas: 
         "overview info info info future"
-        "overview info info info future"
-        "overview info info info future"
         "forecast forecast rain rain future"
         "forecast forecast rain rain future"
         "graph graph rain rain future"
@@ -124,6 +123,12 @@ article {
     grid-area: overview;
     background-color: #02C73933;
     border-radius: 10px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the items */
+    
 }
 
 #info {
@@ -136,6 +141,10 @@ article {
     grid-area: forecast;
     background-color: #28384e;
     border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #graph {
