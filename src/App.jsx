@@ -49,7 +49,7 @@ const App = () => {
             <Inputs setCity={setCity} unit={unit} setUnit={setUnit} />
           </div>
           <section id="main">
-            <div class={`background ${formatBackground(weather)}`}>
+            <div className={`background ${formatBackground(weather)}`}>
               {weather && (
                 <>
                   <TimeAndLocation weather={weather} />

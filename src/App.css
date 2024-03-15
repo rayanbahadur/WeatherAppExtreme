@@ -8,19 +8,6 @@ color: whitesmoke;
     border-radius: 0.5rem;
   }
 
-.app-container {
-  max-width: 100%; /* equivalent to max-w-screen-md in Tailwind CSS */
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 1.25rem; /* equivalent to py-5 in Tailwind CSS */
-  padding-bottom: 1.25rem; /* equivalent to py-5 in Tailwind CSS */
-  padding-left: 8rem; /* equivalent to px-32 in Tailwind CSS */
-  padding-right: 8rem; /* equivalent to px-32 in Tailwind CSS */
-  background-image: linear-gradient(to bottom right, #38b2ac, #4299e1); /* equivalent to bg-gradient-to-br in Tailwind CSS */
-  height: fit-content; /* equivalent to h-fit in Tailwind CSS */
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* equivalent to shadow-xl and shadow-gray-400 in Tailwind CSS */
-  
-}
 
 .from-cyan-700.to-blue-700 {
   background-image: linear-gradient(to bottom right, #38b2ac, #4299e1);
@@ -30,63 +17,13 @@ color: whitesmoke;
   background-image: linear-gradient(to bottom right, #ffdc16, #f59e0b);
 }
   
-
 body {
   background-color: #1D2837;
-  display: flex;
-  flex-direction: row;
   height: 100vh; /* Ensure full height */
+  width: 100vw; /* Ensure full width */
+  display: flex; /* Make body a flex container */
   justify-content: center; /* Horizontally center the items */
-}
-
-#topLine, #midLine, #bottomLine {
-  height: 3px;
-  width: 30px;
-  background-color: white;
-  float: left;
-}
-
-#topLine, #midLine {
-  margin-bottom: 0.5rem;
-}
-
-#hamburger {
-  margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-}
-
-nav {
-  background-color: #1B1B1D;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: fit-content;
-  margin-right: 1rem;
-  height: 100vh;
-}
-
-li {
-  padding: 1rem;
-  
-}
-
-.menuItems {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  font-size: 1rem;
-}
-
-.menuItems img {
-  margin-right: 1rem; /* Add some spacing between image and text */
-}
-
-.menuItems a {
-  color: white; /* Set text color */
-  text-decoration: none; /* Remove underline */
-  display: flex; /* Ensure the anchor element is flex */
-  align-items: center; /* Align items vertically */
+  overflow: hidden;
 }
 
 article {
@@ -94,13 +31,15 @@ article {
   flex: 1;
   flex-direction: column;
   align-items: center;
+  max-width: 95%;
+  max-height: 98%;
 }
 
 #topBar {
-  padding-top: 1rem;
   width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
-
 
 #main {
   display: grid;
@@ -112,12 +51,11 @@ article {
       "graph graph rain rain future"
       "graph graph rain rain future";
   gap: 1rem;
-  height: 100%;
+  height: 98%;
   width: 100%;
-  padding-left: 3rem;
-  padding-right: 3rem;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  max-width: 100%;
+  max-height: 98%;
 }
   
 #overview {
@@ -153,7 +91,6 @@ article {
   align-items: center; /* Vertically center the items */
   justify-content: center; /* Horizontally center the items */
 }
-
 
 #info {
     grid-area: info;
