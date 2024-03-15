@@ -39,6 +39,10 @@ const formatForecastWeather = (data) => {
       temp_f,
       wind_kph,
       wind_mph,
+      pressure_mb,
+      pressure_in,
+      precip_mm,
+      precip_in,
       is_day,
     },
   } = data;
@@ -60,6 +64,10 @@ const formatForecastWeather = (data) => {
     temp_f,
     wind_kph,
     wind_mph,
+    pressure_mb,
+    pressure_in,
+    precip_mm,
+    precip_in,
     is_day,
     ...formatAstroData(forecastday),
     dailyForecast: formatDailyForecast(forecastday, loc_tz),
@@ -78,7 +86,7 @@ const formatHourlyForecast = (forecast, loc_epoch, timezone) => {
     (forecast) => forecast.time_epoch > loc_epoch
   );
   hourlyForecast = hourlyForecast
-    .slice(1, 6)
+    .slice(1, 8)
     .map(({ temp_c, temp_f, time_epoch, condition: { icon } }) => {
       return {
         temp_c,

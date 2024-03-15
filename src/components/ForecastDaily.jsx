@@ -7,7 +7,7 @@ const ForecastDaily = ({ title, unit, forecast }) => {
         <p className="forecast-title-text2">{title}</p>
       </div>
 
-      <hr className="forecast-divider2" />
+      <hr className="forecast-divider" />
 
       <div className="forecast-items-container2">
         {forecast.map(({ title, icon, temp_c, temp_f }) => (

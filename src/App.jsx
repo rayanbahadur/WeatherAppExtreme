@@ -44,26 +44,8 @@ const App = () => {
 
   return (
       <body>
-        {/* <nav>
-          <ul id="menu">
-            <li id="hamburger">
-              <div id="topLine"></div>
-              <div id="midLine"></div>
-              <div id="bottomLine"></div>
-            </li>
-            <li className="menuItems"><a href="#"><img src={DashboardImage} alt="" /><div>Dashboard</div></a></li>
-            <li className="menuItems"><a href="#"><img src={MapImage} alt="" /><div>Map</div></a></li>
-            <li className="menuItems"><a href="#"><img src={DownloadImage} alt="" /><div>Offline</div></a></li>
-            <li className="menuItems"><a href="#"><img src={SettingsImage} alt="" /><div>Settings</div></a></li>
-          </ul>
-          <ul id="extra">
-            <li className="menuItems"><a href="#"><img src={DownloadImage} alt="" /><div>Share</div></a></li>
-            <li className="menuItems"><a href="#"><img src={SettingsImage} alt="" /><div>Logout</div></a></li>
-          </ul>
-        </nav> */}
         <article>
           <div id="topBar">
-            {/* <div>Welcome!</div> */}
             <Inputs setCity={setCity} unit={unit} setUnit={setUnit} />
           </div>
           <section id="main">
@@ -85,14 +67,14 @@ const App = () => {
             <div id="forecast">
               {weather && (
                   <>
-                    <Details weather={weather} unit={unit}/>
+                    <Details weather={weather} unit={unit} title={"Astro Details"}/>
                   </>
                 )}
             </div>
             <div id="hours">
             {weather && (
                 <Forecast
-                  // title="hourly forecast"
+                  title="hourly forecast"
                   unit={unit}
                   forecast={weather.hourlyForecast}
                 />
@@ -101,7 +83,7 @@ const App = () => {
             <div id="someInfo">
               {weather && (
                 <>
-                  <WeatherDetails weather={weather} unit={unit} />
+                  <WeatherDetails weather={weather} unit={unit} title={"Extra Details"} />
                 </>
               )}
             </div>

@@ -2,11 +2,9 @@ import React from "react";
 const Forecast = ({ title, unit, forecast }) => {
   return (
     <div className="forecast-container">
-      {/* <div className="forecast-title">
-        <p className="forecast-title-text">{title}</p>
-      </div> */}
+        <p className="forecast-title-text2">{title}</p>
 
-      {/* <hr className="forecast-divider" /> */}
+      {<hr className="forecast-divider2" />}
 
       <div className="forecast-items-container">
         {forecast.map(({ title, icon, temp_c, temp_f }) => (

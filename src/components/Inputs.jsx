@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GrLocation, GrSearch } from "react-icons/gr";
+import { BsThermometerHalf } from "react-icons/bs";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import Profile from "./profile";
@@ -34,6 +35,7 @@ const Inputs = ({ setCity, unit, setUnit }) => {
   return (
     <div className="input-container">
       <div className="input-wrapper">
+        <img src="src\assets\favicon.png" alt="Weather App Logo" />
         <input
           type="text"
           placeholder="Search Location"
@@ -52,10 +54,12 @@ const Inputs = ({ setCity, unit, setUnit }) => {
           className="icon"
         />
       </div>
+
       <div className="input-wrapper">
         <button className="unit-button"
           onClick={() => setUnit(unit === "c" ? "f" : "c")}
         >
+          <BsThermometerHalf className="logIcon" />
           {`°${unit === "c" ? "F" : "C"}`}
         </button>
         {error && <p>Authentication Error</p>}

@@ -2,7 +2,8 @@ import React from "react";
 import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { FiWind } from "react-icons/fi";
-import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
+import { TbGauge } from "react-icons/tb";
+import { IoRainyOutline } from "react-icons/io5";
 
 function RenderDetail(props) {
   const Icon = props.icon;
@@ -15,46 +16,61 @@ function RenderDetail(props) {
 }
 
 const WeatherDetails = ({
+  title,
   unit,
   weather: {
-    condition_icon,
-    condition_text,
     feelslike_c,
     feelslike_f,
     humidity,
-    temp_c,
-    temp_f,
     wind_kph,
     wind_mph,
-    sunrise,
-    sunset,
-    moonrise,
-    moonset,
+    pressure_mb,
+    pressure_in,
+    precip_mm,
+    precip_in,
   },
 }) => {
   const horizontalDetails = [
     {
       id: 1,
       icon: BsThermometerHalf,
-      text: "real feel",
+      text: "Real Feel",
       data: `${unit === "c" ? feelslike_c : feelslike_f}${unit === "c" ? "°C" : "°F"}`,
     },
     {
       id: 2,
       icon: MdOutlineWaterDrop,
-      text: "humidity",
+      text: "Humidity",
       data: `${humidity}%`,
     },
     {
       id: 3,
       icon: FiWind,
-      text: "wind",
+      text: "Wind",
       data: `${unit === "c" ? wind_kph + " km/h" : wind_mph + "m/h"}`,
+    },
+    {
+      id: 4,
+      icon: TbGauge,
+      text: "Pressure",
+      data: `${unit === "c" ? pressure_mb + " mb" : pressure_in + "in"}`,
+    },
+    {
+      id: 5,
+      icon: IoRainyOutline,
+      text: "Precipitation",
+      data: `${unit === "c" ? precip_mm + " mm" : precip_in + "in"}`,
     },
   ];
 
   return (
     <div>
+      <div className="forecast-title2">
+        <p className="forecast-title-text2">{title}</p>
+      </div>
+
+      <hr className="forecast-divider2" />
+
         <div className="weather-details">
           {horizontalDetails.map(({ id, icon, text, data }) => (
             <RenderDetail key={id} icon={icon} text={text} data={data} />

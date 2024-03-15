@@ -1,7 +1,4 @@
 import React from "react";
-import { BsThermometerHalf } from "react-icons/bs";
-import { MdOutlineWaterDrop } from "react-icons/md";
-import { FiWind } from "react-icons/fi";
 import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
 
 function RenderDetail(props) {
@@ -27,74 +24,51 @@ function RenderDetail(props) {
   }
   
   const Details = ({
+    title,
     unit,
     weather: {
-      condition_icon,
-      condition_text,
-      feelslike_c,
-      feelslike_f,
-      humidity,
-      temp_c,
-      temp_f,
-      wind_kph,
-      wind_mph,
       sunrise,
       sunset,
       moonrise,
       moonset,
     },
   }) => {
-    const horizontalDetails = [
-      {
-        id: 1,
-        icon: BsThermometerHalf,
-        text: "real feel",
-        data: `${unit === "c" ? feelslike_c : feelslike_f}°`,
-      },
-      {
-        id: 2,
-        icon: MdOutlineWaterDrop,
-        text: "humidity",
-        data: `${humidity}%`,
-      },
-      {
-        id: 3,
-        icon: FiWind,
-        text: "wind",
-        data: `${unit === "c" ? wind_kph + " km/h" : wind_mph + "m/h"}`,
-      },
-    ];
-  
+
     const verticalDetails = [
       {
         id: 1,
         icon: WiSunrise,
-        text: "sunrise",
+        text: "Sunrise",
         data: sunrise,
       },
       {
         id: 2,
         icon: WiSunset,
-        text: "sunset",
+        text: "Sunset",
         data: sunset,
       },
       {
         id: 3,
         icon: WiMoonrise,
-        text: "moonrise",
+        text: "Moonrise",
         data: moonrise,
       },
       {
         id: 4,
         icon: WiMoonset,
-        text: "moonset",
+        text: "Moonset",
         data: moonset,
       },
     ];
   
     return (
-        <div>
-  
+      <div>
+        <div className="forecast-title2">
+          <p className="forecast-title-text2">{title}</p>
+          </div>
+          
+          <hr className="forecast-divider" />
+
           <div className="vertical-details">
             {verticalDetails.map(({ id, icon, text, data }) => (
               <RenderVerticalDetail key={id} icon={icon} text={text} data={data} />
