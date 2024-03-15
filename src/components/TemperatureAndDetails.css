@@ -1,0 +1,52 @@
+.weather-condition {
+    display: flex;
+    justify-content: center;
+    color: #f7e7d2;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .temperature-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-icon {
+    width: 6rem; /* Adjust size as needed */
+    height: 6rem; /* Adjust size as needed */
+  }
+  
+  .temperature {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  
+  /* .detail-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .detail-icon {
+    margin-right: 5px;
+  }
+  
+  .detail-text {
+    font-weight: bold;
+  }
+  
+  .detail-data {
+    font-weight: normal;
+  }
+  
+  .horizontal-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .vertical-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+     */

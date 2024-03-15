@@ -1,0 +1,40 @@
+.weather-details {
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Set flex direction to column */
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+/* Reset font weight for all text elements within .weather-details */
+.weather-details * {
+    /* margin-bottom: 0.25rem; */
+    /* margin-top: 0.4rem; */
+}
+
+.detail-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .detail-icon2 {
+    margin-right: 0.5rem;
+  }
+  
+  .detail-text2 {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .detail-data2 {
+    display: flex;
+    font-size: 1rem;
+    flex-direction: row;
+    font-weight: normal;
+    align-items: center;
+  }

@@ -1,0 +1,31 @@
+ .detail-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  .detail-icon {
+  }
+  
+  .detail-text {
+    font-weight: bold;
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .detail-data {
+    font-weight: normal;
+  }
+  
+  .horizontal-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .vertical-details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+    
