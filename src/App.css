@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html {
+font-family: "Poppins", sans-serif;
+color: whitesmoke;
+}
+.leaflet-container {
+    border-radius: 0.5rem;
+  }
+
 .app-container {
   max-width: 100%; /* equivalent to max-w-screen-md in Tailwind CSS */
   margin-left: auto;
@@ -25,8 +35,8 @@ body {
     background-color: #1D2837;
     display: flex;
     flex-direction: row;
-    width: 100vw;
     height: 100vh; /* Ensure full height */
+    justify-content: center; /* Horizontally center the items */
 }
 
 #topLine, #midLine, #bottomLine {
@@ -53,10 +63,12 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     width: fit-content;
+    margin-right: 1rem;
+    height: 100vh;
 }
 
 li {
-    padding: 0.5rem;
+    padding: 1rem;
     
 }
 
@@ -196,3 +208,311 @@ article {
     border-radius: 10px;
     padding: 1rem;
 }
+
+/*Login and Logout button*/
+
+#log-button, .unit-button{
+    font-size: large;
+    color: white;
+    border: 1pt solid white;
+    background-color: transparent;
+    border-radius: 0.375rem;
+    padding: 0.25rem 1rem;
+    margin-left: 5pt;
+    transition: transform 0.3s ease;
+  }
+.unit-button{
+    padding: 0.25rem 0.75rem;
+}
+#log-button:hover, .unit-button:hover{
+    transform: scale(1.05);
+    background-color: white;
+    color: black;
+}
+
+/*Profile*/
+
+.profile {
+    border-radius: 100%;
+    width: 4rem;
+    border: 1px solid;
+    margin-left: 10pt;
+}
+
+/*Details*/
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  .detail-text {
+    font-weight: bold;
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .detail-data {
+    font-weight: normal;
+  }
+  
+  .horizontal-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .vertical-details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+    
+/*Forecast*/
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .forecast-title {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    margin-top: 1.5rem;
+  }
+  
+  .forecast-title-text {
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .forecast-items-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Space items around evenly */
+  }
+  
+  .forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .forecast-item-text {
+    font-weight: 300;
+    font-size: 1rem; /* Adjust size as needed */
+  }
+  
+  .forecast-item-icon {
+    width: 3rem; /* Adjust size as needed */
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .forecast-item-temperature {
+    font-size: 1rem;
+  }
+  
+  /* ForecastDaily */
+
+.forecast-container2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+  
+.forecast-title2 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    /* margin-top: 1.5rem; */
+    margin-bottom: 0.5rem;
+}
+
+.forecast-divider2 {
+    margin-bottom: 2rem;
+    width: 80%;
+}
+  
+.forecast-title-text2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+  
+.forecast-items-container2 {
+    display: flex;
+    flex-direction: row; /* Change to row */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    justify-content: space-around; /* Space items around evenly */
+}
+  
+.forecast-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem; /* Add margin for spacing between rows */
+    width: 45%; /* Adjust the width of each item to fit two items in a row */
+}
+  
+.forecast-item-text2 {
+    font-weight: 300;
+    font-size: 1rem; /* Adjust size as needed */
+}
+  
+.forecast-item-icon2 {
+    width: 3rem; /* Adjust size as needed */
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+  
+.forecast-item-temperature2 {
+    font-size: 1rem;
+}
+
+/* Inputs */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-wrapper input {
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    color: #515255;
+    border-radius: 0.375rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 0.375rem rgba(0, 0, 0, 0.1);
+    outline: none;
+    text-transform: capitalize;
+  }
+  
+  .input-wrapper2 {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-wrapper2 button {
+    font-size: 1rem;
+    margin-left: 1rem;
+    font-weight: normal;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    transition: transform 0.2s ease-out;
+  }
+  
+  
+  .input-wrapper input::placeholder {
+    color: #38506e; /* Placeholder text color */
+  }
+  
+  .icon {
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .icon:hover {
+    transform: scale(1.05);
+  }
+  
+  /* TemperatureAndDetails */
+
+  .weather-condition {
+    display: flex;
+    justify-content: center;
+    color: #f7e7d2;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .temperature-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-icon {
+    width: 6rem; /* Adjust size as needed */
+    height: 6rem; /* Adjust size as needed */
+  }
+  
+  .temperature {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  /* TimeAndLocation */
+  .time-location-datetime {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.time-location-location {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* WeatherDetails */
+.weather-details {
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Set flex direction to column */
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+/* Reset font weight for all text elements within .weather-details */
+.weather-details * {
+    /* margin-bottom: 0.25rem; */
+    /* margin-top: 0.4rem; */
+}
+
+.detail-item2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .detail-icon2 {
+    margin-right: 0.5rem;
+  }
+  
+  .detail-text2 {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .detail-data2 {
+    display: flex;
+    font-size: 1rem;
+    flex-direction: row;
+    font-weight: normal;
+    align-items: center;
+  }

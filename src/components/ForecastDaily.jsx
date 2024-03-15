@@ -1,5 +1,4 @@
 import React from "react";
-import "./ForecastDaily.css";
 
 const ForecastDaily = ({ title, unit, forecast }) => {
   return (

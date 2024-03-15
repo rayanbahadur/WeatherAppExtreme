@@ -1,6 +1,4 @@
 import React from "react";
-import "./Forecast.css";
-
 const Forecast = ({ title, unit, forecast }) => {
   return (
     <div className="forecast-container">

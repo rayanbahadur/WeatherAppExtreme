@@ -7,7 +7,7 @@ function LoginButton() {
     !isAuthenticated && (
     <button 
         onClick={() => loginWithRedirect()}
-        className="text-l border rounded-md px-5 py-1 transition hover:scale-105">
+        id="log-button">
           Login
         </button>
     )

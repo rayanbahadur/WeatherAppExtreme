@@ -4,7 +4,6 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import Profile from "./profile";
 import { useAuth0 } from "@auth0/auth0-react";
-import "./Inputs.css"; // Import your CSS file
 
 const Inputs = ({ setCity, unit, setUnit }) => {
   const [cityInput, setCityInput] = useState("");
@@ -54,7 +53,7 @@ const Inputs = ({ setCity, unit, setUnit }) => {
         />
       </div>
       <div className="input-wrapper">
-        <button
+        <button className="unit-button"
           onClick={() => setUnit(unit === "c" ? "f" : "c")}
         >
           {`°${unit === "c" ? "F" : "C"}`}

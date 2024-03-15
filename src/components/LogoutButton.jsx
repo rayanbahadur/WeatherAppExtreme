@@ -7,7 +7,7 @@ function LogoutButton() {
     isAuthenticated && (
     <button 
         onClick={() => logout()}
-        className="text-l border rounded-md px-5 py-1 transition hover:scale-105">
+        id="log-button">
           Logout
         </button>
     )

@@ -1,5 +1,4 @@
 import React from "react";
-import "./WeatherDetails.css"; // Import your CSS file
 import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { FiWind } from "react-icons/fi";
