@@ -23,7 +23,7 @@ body {
   width: 100vw; /* Ensure full width */
   display: flex; /* Make body a flex container */
   justify-content: center; /* Horizontally center the items */
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 article {
@@ -52,7 +52,7 @@ article {
       "graph graph rain rain future";
   gap: 1rem;
   height: 98%;
-  width: 100%;
+  width: fit-content;
   padding-top: 1rem;
   max-width: 100%;
   max-height: 98%;
@@ -70,11 +70,7 @@ article {
   
 }
 /* Media query*/
-@media (max-width: 1572px) {
-  body{
-    overflow-y: visible;
-    width: fit-content;
-  }
+@media (max-width: 1440px) {
   #main {
     grid-template-areas: 
       "overview info info info"
