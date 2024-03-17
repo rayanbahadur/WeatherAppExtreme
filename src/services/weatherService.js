@@ -1,15 +1,21 @@
 import { DateTime } from "luxon";
 
+// API Key to access the WeatherAPI
 const API_KEY = "2042a88d3bdb435d80a162232240603";
+
+// URL for WeatherAPI
 const BASE_URL = "http://api.weatherapi.com/v1";
 
+// Used to fetch data from the API
 const fetchData = (apiMethod, searchParams) => {
   const url = new URL(BASE_URL + "/" + apiMethod + ".json");
   url.search = new URLSearchParams({ key: API_KEY, ...searchParams });
 
+  // Fetches data from the URL
   return fetch(url).then((res) => res.json());
 };
 
+// Function used to format the weather data
 export const getFormattedWeatherData = async (city) => {
   const formattedWeather = await fetchData("forecast", {
     q: city,
@@ -19,7 +25,9 @@ export const getFormattedWeatherData = async (city) => {
   return formattedWeather;
 };
 
+// Formats forecast weather data
 const formatForecastWeather = (data) => {
+  // Gathers fetched data
   const {
     location: {
       name: loc_name,
@@ -47,8 +55,10 @@ const formatForecastWeather = (data) => {
     },
   } = data;
 
+  // Formats local datetime
   const locDateTime = formatToLocalTime(loc_epoch, loc_tz);
 
+  // Returns the formatted weather data
   return {
     loc_name,
     loc_country,
@@ -75,11 +85,14 @@ const formatForecastWeather = (data) => {
   };
 };
 
+// Function used to format the icon URL
 const formatIconUrl = (iconUrl) => {
   return "https:" + iconUrl;
 };
 
+// Function used to format hourly forecast data
 const formatHourlyForecast = (forecast, loc_epoch, timezone) => {
+  // Gathers forecast data and filters it based on local epoch time
   let hourlyForecast = forecast.slice(0, 2).map(({ hour }) => hour);
   hourlyForecast = [...hourlyForecast[0], ...hourlyForecast[1]];
   hourlyForecast = hourlyForecast.filter(
@@ -95,10 +108,11 @@ const formatHourlyForecast = (forecast, loc_epoch, timezone) => {
         title: formatToLocalTime(time_epoch, timezone, "hh:mm a"),
       };
     });
-
+  // Returns the formatted forecast data
   return hourlyForecast;
 };
 
+// Function used to formal the daily forecast data
 const formatDailyForecast = (forecast, timezone) => {
   const dailyForecast = forecast.map(({ date_epoch, day }) => {
     return {
@@ -108,18 +122,20 @@ const formatDailyForecast = (forecast, timezone) => {
       icon: formatIconUrl(day.condition.icon),
     };
   });
-
+  // Returns formatted daily forecast data
   return dailyForecast;
 };
 
+// Function used to format the astronomical data
 const formatAstroData = (forecast) => {
   const {
     astro: { sunrise, sunset, moonrise, moonset },
   } = forecast[0];
-
+  // Returns formatted astronomical data
   return { sunrise, sunset, moonrise, moonset };
 };
 
+// Function used to convert the epoch time to local time
 const formatToLocalTime = (
   epoch,
   timezone,
@@ -127,3 +143,4 @@ const formatToLocalTime = (
 ) => {
   return DateTime.fromSeconds(epoch).setZone(timezone).toFormat(format);
 };
+
