@@ -1,3 +1,8 @@
+// This component renders temperature and additional weather details, 
+// including real feel, humidity, wind speed, sunrise, sunset, moonrise, and moonset times. 
+// It provides both horizontal and vertical layout options for displaying details. 
+// Icons from various weather conditions are utilized for visual representation.
+
 import React from "react";
 import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";

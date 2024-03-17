@@ -1,3 +1,9 @@
+// This component represents input elements for searching weather by location and 
+// toggling temperature units. It includes functionality to search by city name or geolocation. 
+// Additionally, it integrates authentication features such as login, logout buttons, 
+// and user profile display using Auth0.
+
+
 import React, { useState } from "react";
 import { GrLocation, GrSearch } from "react-icons/gr";
 import { BsThermometerHalf } from "react-icons/bs";

@@ -1,3 +1,7 @@
+// This component renders a map using the react-leaflet library, displaying a marker 
+// at the specified latitude and longitude coordinates. 
+// It includes functionality to change the map view based on the provided center coordinates.
+
 import React from 'react';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';

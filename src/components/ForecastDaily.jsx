@@ -1,3 +1,6 @@
+// This component renders daily forecast data, including title, icon, 
+// and temperature, in a vertical layout. It accepts title, unit, and forecast as props.
+
 import React from "react";
 
 const ForecastDaily = ({ title, unit, forecast }) => {

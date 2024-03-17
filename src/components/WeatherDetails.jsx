@@ -1,3 +1,8 @@
+// This component renders various weather details, such as real feel temperature, 
+// humidity, wind speed, pressure, and precipitation. 
+// It utilizes icons to represent each detail and allows for displaying data in a horizontal layout. 
+// The component receives weather data as props and formats it accordingly based on the selected unit.
+
 import React from "react";
 import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineWaterDrop } from "react-icons/md";

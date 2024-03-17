@@ -1,3 +1,9 @@
+// This component renders detailed weather information including sunrise, 
+// sunset, moonrise, and moonset times with corresponding icons. 
+// It consists of two sub-components, RenderDetail and RenderVerticalDetail, for different layout styles. 
+// The Details component organizes and displays the weather details vertically, 
+// providing a clear overview of essential data.
+
 import React from "react";
 import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
 

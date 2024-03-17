@@ -1,3 +1,6 @@
+// This component displays forecast data, including title, icon, and temperature, 
+// organized in a vertical layout. It accepts title, unit, and forecast as props.
+
 import React from "react";
 const Forecast = ({ title, unit, forecast }) => {
   return (
