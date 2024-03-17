@@ -69,6 +69,48 @@ article {
   justify-content: center; /* Horizontally center the items */
   
 }
+/* Media query*/
+@media (max-width: 1572px) {
+  body{
+    overflow-y: visible;
+    width: fit-content;
+  }
+  #main {
+    grid-template-areas: 
+      "overview info info info"
+      "forecast forecast rain rain"
+      "forecast forecast rain rain"
+      "graph graph rain rain"
+      "graph graph rain rain"
+      "graph graph rain rain"
+      "future future future future";
+  }
+
+}
+
+@media (max-width: 1230px) {
+  #main {
+    grid-template-areas: 
+      "overview info info info"
+      "forecast forecast graph graph"
+      "forecast forecast graph graph"
+      "rain rain rain rain"
+      "future future future future";
+  }
+}
+
+@media (max-width: 693px) {
+  #main {
+    grid-template-areas: 
+      "overview"
+      "info"
+      "forecast"
+      "graph"
+      "rain"
+      "future";
+  }
+
+}
 
 .day-background {
   grid-area: overview;
@@ -179,17 +221,19 @@ article {
     display: flex;
     align-items: center;
     margin: 1rem;
+    text-align: center;
 }
 
 .detail-text {
   font-weight: bold;
   margin-right: 0.8rem;
   margin-left: 0.8rem;
-  font-size: 1rem;
+  font-size: 1.12rem;
 }
 
 .detail-data {
   font-weight: normal;
+  font-size: 1.1rem;
 }
 
 .horizontal-details {
@@ -226,11 +270,34 @@ article {
   align-items: center;
 }
 
+.forecast-item-text{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 .forecast-divider {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   width: 80%;
   color: #717d8d;
+} 
+
+.forecast-item-temperature {
+  font-size: 1.1rem;
 }
+
+@media screen and (max-width: 1230px) {
+  .vertical-details{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .forecast-items-container {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
   
   /* ForecastDaily */
 
@@ -250,8 +317,9 @@ article {
 }
 
 .forecast-divider2 {
-    margin-bottom: 1rem;
-    width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 80%;
 }
   
 .forecast-title-text2 {
@@ -259,6 +327,7 @@ article {
     font-size: 1.4rem;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 0;
 }
   
 .forecast-items-container2 {
@@ -272,13 +341,12 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem; /* Add margin for spacing between rows */
     width: 45%; /* Adjust the width of each item to fit two items in a row */
 }
   
 .forecast-item-text2 {
-    font-weight: 300;
-    font-size: 1rem; /* Adjust size as needed */
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjust size as needed */
 }
   
 .forecast-item-icon2 {
@@ -288,12 +356,26 @@ article {
 }
   
 .forecast-item-temperature2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
+@media (max-width: 1572px) {
+  .forecast-items-container2 {
+    row-gap: 2rem;
+    column-gap: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .forecast-item2 {
+    flex-direction: row;
+    width: auto;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
 /* Inputs */
 .input-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
@@ -350,6 +432,17 @@ article {
   .icon:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 642px) {
+    .input-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    #log-button{
+      margin-left: 1rem;
+    }
+  }
   
   /* TemperatureAndDetails */
 
@@ -359,6 +452,7 @@ article {
     color: #f7e7d2;
     padding-top: 2rem;
     font-size: 1.5rem;
+    font-weight: bold;
   }
   
   .temperature-details {
@@ -385,7 +479,8 @@ article {
 }
 
 .time-location-location {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -396,7 +491,7 @@ article {
   gap: 3rem;
   justify-content: space-between;
   align-items: center;
-    
+  margin-bottom: 1.5rem;    
 }
 
 .detail-item2 {
@@ -404,6 +499,7 @@ article {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
   
 .detail-icon2 {
@@ -412,13 +508,26 @@ margin-right: 0.5rem;
 
 .detail-text2 {
 font-weight: bold;
-font-size: 0.9rem;
+font-size: 1.12rem;
 }
 
 .detail-data2 {
 display: flex;
-font-size: 1rem;
+font-size: 1.1rem;
 flex-direction: row;
 font-weight: normal;
 align-items: center;
+}
+
+@media (max-width: 1230px) {
+  .weather-details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .detail-item2 {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
