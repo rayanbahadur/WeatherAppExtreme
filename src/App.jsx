@@ -6,13 +6,6 @@ import WeatherDetails from "./components/WeatherDetails";
 import Details from "./components/Details";
 import Forecast from "./components/Forecast";
 import ForecastDaily from "./components/ForecastDaily";
-/* import DashboardImage from "./assets/Dashboard.png";
-import MapImage from "./assets/Map.png";
-import DownloadImage from "./assets/Download.png";
-import SettingsImage from "./assets/Settings.png";
-import ShareImage from "./assets/Share.png"
-import LogoutImage from "./assets/Logout.png" */
-
 import { getFormattedWeatherData } from "./services/weatherService";
 
 import { ToastContainer, toast } from "react-toastify";
