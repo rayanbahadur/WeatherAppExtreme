@@ -1,12 +1,37 @@
+
 # Extreme Weather App
 
 ## Installation
-1. Install the required dependencies using `npm install`.
-2. If page (weather data) doesn't show up, this means the trial for WeatherAPI has run out. To fix this simply create a WeatherAPI account and change the `API_KEY` in `./services/weatherService.js` to new key
 
-## Usage
+To set up the app, you'll need to manually install each dependency:
 
-1. Run the app using `npm start`.
-2. Open your browser and navigate to `http://localhost:3000`.
----
-Using the **[WeatherAPI](www.weatherapi.com)** instead of [OpenWeather](https://openweathermap.org/), because OpenWeather requires bank details to give extended features.
+- Install the necessary dependencies by running the following commands:
+  ```
+  npm install @auth0/auth0-react
+  npm install leaflet
+  npm install luxon
+  npm install react
+  npm install react-dom
+  npm install react-icons
+  npm install react-leaflet
+  npm install react-toastify
+  ```
+- For development dependencies, run:
+  ```
+  npm install @babel/plugin-proposal-private-property-in-object --save-dev
+  ```
+
+- If the weather data does not load, it might be due to the expiration of the WeatherAPI trial period. To fix this, create an account at [WeatherAPI](https://www.weatherapi.com/), obtain a new API key, and update the `API_KEY` in `./services/weatherService.js` with the new key.
+
+## Running the App
+
+To launch the app locally:
+
+1. Start the app by running `npm start`.
+2. Access the app via a web browser at `http://localhost:3000`.
+
+## Notes
+
+- This app uses [WeatherAPI](https://www.weatherapi.com/) over [OpenWeather](https://openweathermap.org/) because it provides extended features without requiring bank details for account creation.
+
+--- 
