@@ -11,8 +11,7 @@ To set up the app, you'll need to follow the following steps:
 4. Inside the public folder change the `index.html` file to our `index.html` file
 
 5. Run the command `npm install`
-
-- Install the necessary dependencies by running the following commands:
+6.  Install the necessary dependencies by running the following commands:
   ```
   npm install @auth0/auth0-react
   npm install leaflet
@@ -23,7 +22,7 @@ To set up the app, you'll need to follow the following steps:
   npm install react-leaflet
   npm install react-toastify
   ```
-- For development dependencies, run:
+7. For development dependencies, run:
   ```
   npm install @babel/plugin-proposal-private-property-in-object --save-dev
   ```
