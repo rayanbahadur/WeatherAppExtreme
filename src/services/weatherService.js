@@ -17,12 +17,15 @@ const fetchData = (apiMethod, searchParams) => {
 
 // Function used to format the weather data
 export const getFormattedWeatherData = async (city) => {
-  const formattedWeather = await fetchData("forecast", {
+  const weatherData = await fetchData("forecast", {
     q: city,
     days: 10,
-  }).then(formatForecastWeather);
+  });
 
-  return formattedWeather;
+  const formattedWeather = formatForecastWeather(weatherData);
+  const weatherAlerts = formatWeatherAlerts(weatherData.alerts);
+
+  return { ...formattedWeather, alerts: weatherAlerts };
 };
 
 // Formats forecast weather data
@@ -84,6 +87,23 @@ const formatForecastWeather = (data) => {
     hourlyForecast: formatHourlyForecast(forecastday, loc_epoch, loc_tz),
   };
 };
+
+const formatWeatherAlerts = (alertsData) => {
+  if (!alertsData || !alertsData.alert) return [];
+
+  return alertsData.alert.map(alert => ({
+    headline: alert.headline,
+    severity: alert.severity,
+    urgency: alert.urgency,
+    areas: alert.areas,
+    event: alert.event,
+    effective: alert.effective,
+    expires: alert.expires,
+    description: alert.desc,
+    instruction: alert.instruction,
+  }));
+};
+
 
 // Function used to format the icon URL
 const formatIconUrl = (iconUrl) => {
