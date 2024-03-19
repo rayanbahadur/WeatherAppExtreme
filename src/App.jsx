@@ -11,6 +11,7 @@ import { getFormattedWeatherData } from "./services/weatherService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map";
+import Alerts from "./components/Alerts";
 
 
 const App = () => {
@@ -90,7 +91,9 @@ const App = () => {
               )}  
             </div>
           </section>
+          {weather && weather.alerts && <Alerts alerts={weather.alerts} />}
         </article>
+        <ToastContainer />
       </body>
   );
 };
