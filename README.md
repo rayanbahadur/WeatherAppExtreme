@@ -3,7 +3,14 @@
 
 ## Installation
 
-To set up the app, you'll need to manually install each dependency:
+To set up the app, you'll need to follow the following steps:
+
+1. Create react app: `npx create-react-app pick-a-name`
+2. Open the app folder (`code pick-a-name`)
+3. Now change the contents of the src folder to our src contents
+4. Inside the public folder change the `index.html` file to our `index.html` file
+
+5. Run the command `npm install`
 
 - Install the necessary dependencies by running the following commands:
   ```

@@ -1,10 +1,21 @@
-// This component renders a map using the react-leaflet library, displaying a marker 
-// at the specified latitude and longitude coordinates. 
-// It includes functionality to change the map view based on the provided center coordinates.
-
 import React from 'react';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMap, Icon } from 'react-leaflet';
+
+import L from 'leaflet';
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const ChangeView = ({ center }) => {
   const map = useMap();
@@ -22,7 +33,7 @@ const Map = ({ weather: { loc_lat, loc_lon } }) => {
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       <Marker position={position}></Marker>
-      <ChangeView center={position} /> 
+      <ChangeView center={position} />
     </MapContainer>
   );
 };

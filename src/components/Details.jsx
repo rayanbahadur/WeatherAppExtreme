@@ -6,17 +6,6 @@
 
 import React from "react";
 import { WiSunrise, WiSunset, WiMoonrise, WiMoonset } from "react-icons/wi";
-
-function RenderDetail(props) {
-    const Icon = props.icon;
-    return (
-      <div className="detail-item">
-        <Icon className="detail-icon" size={40} />
-        <span className="detail-text">{`${props.text} :`}</span>
-        <span className="detail-data">{props.data}</span>
-      </div>
-    );
-  }
   
   function RenderVerticalDetail(props) {
     const Icon = props.icon;
