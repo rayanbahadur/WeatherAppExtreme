@@ -5,7 +5,7 @@
 
 To set up the app, you'll need to follow the following steps:
 
-1. Create react app: `npx create-react-app pick-a-name`
+1. Create react app (in terminal): `npx create-react-app pick-a-name`
 2. Open the app folder (`code pick-a-name`)
 3. Now change the contents of the src folder to our src contents
 4. Inside the public folder change the `index.html` file to our `index.html` file
