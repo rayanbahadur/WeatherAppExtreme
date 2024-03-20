@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map";
 import Alerts from "./components/Alerts";
+import TopButtons from "./components/TopButtons";
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <article>
           <div id="topBar">
             <Inputs setCity={setCity} unit={unit} setUnit={setUnit} />
+            <TopButtons setCity={setCity} />
           </div>
           <section id="main">
             <div className={`background ${formatBackground(weather)}`}>

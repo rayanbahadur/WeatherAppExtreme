@@ -27,7 +27,7 @@ To set up the app, you'll need to follow the following steps:
   npm install @babel/plugin-proposal-private-property-in-object --save-dev
   ```
 
-- If the weather data does not load, it might be due to the expiration of the WeatherAPI trial period. To fix this, create an account at [WeatherAPI](https://www.weatherapi.com/), obtain a new API key, and update the `API_KEY` in `./services/weatherService.js` with the new key.
+- If the weather data does not load (10 day forecast will only show 3 days), it might be due to the expiration of the WeatherAPI trial period (03/05/2024). To fix this, create an account at [WeatherAPI](https://www.weatherapi.com/), obtain a new API key, and update the `API_KEY` in `./services/weatherService.js` with the new key.
 
 ## Running the App
 

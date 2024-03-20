@@ -1,31 +1,27 @@
+/* Importing Poppins font from Google Fonts for use throughout the website */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* Base styles for the entire document */
 html {
 font-family: "Poppins", sans-serif;
 color: whitesmoke;
 }
+
+/* Styling for leaflet maps, adding rounded corners */
 .leaflet-container {
     border-radius: 0.5rem;
   }
-
-
-.from-cyan-700.to-blue-700 {
-  background-image: linear-gradient(to bottom right, #38b2ac, #4299e1);
-}
-
-.from-yellow-700.to-orange-700 {
-  background-image: linear-gradient(to bottom right, #ffdc16, #f59e0b);
-}
   
 body {
   background-color: #1D2837;
-  height: 100vh; /* Ensure full height */
-  width: 100vw; /* Ensure full width */
-  display: flex; /* Make body a flex container */
-  justify-content: center; /* Horizontally center the items */
+  height: 100vh;
+  width: 100vw; 
+  display: flex; 
+  justify-content: center;
   overflow-x: hidden;
 }
 
+/* General layout for articles, including flex properties for alignment and spacing */
 article {
   display: flex;
   flex: 1;
@@ -35,12 +31,40 @@ article {
   max-height: 98%;
 }
 
+/* Styling for the top bar section */
 #topBar {
   width: 100%;
   max-width: 100%;
   max-height: 100%;
 }
+/* Top Buttons*/
+.top-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  gap: 10pt;
+}
+.top-buttons-bttn{
+  cursor: pointer;
+  color: #769dcc;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  font-size: medium;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10pt;
+  justify-content: center;
+}
 
+.loc-loc{
+  font-weight: normal;
+}
+
+/* Main grid layout for the page, defining areas for various weather information */
 #main {
   display: grid;
   grid-template-areas: 
@@ -65,12 +89,11 @@ article {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Vertically center the items */
-  justify-content: center; /* Horizontally center the items */
+  align-items: center;
+  justify-content: center;
   
 }
-/* Media query*/
-@media (max-width: 1440px) {
+/* Responsive media queries adjusting the grid layout at different viewport widths */@media (max-width: 1440px) {
   #main {
     grid-template-areas: 
       "overview info info info"
@@ -108,6 +131,7 @@ article {
 
 }
 
+/* Styling for day and night backgrounds, using gradients for visual effect */
 .day-background {
   grid-area: overview;
   background: linear-gradient(to right, #ff7e5f, #feb47b); /* Daytime gradient */
@@ -115,8 +139,8 @@ article {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Vertically center the items */
-  justify-content: center; /* Horizontally center the items */
+  align-items: center;
+  justify-content: center;
 }
 
 .night-background {
@@ -126,8 +150,8 @@ article {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Vertically center the items */
-  justify-content: center; /* Horizontally center the items */
+  align-items: center;
+  justify-content: center;
 }
 
 #info {
@@ -160,7 +184,7 @@ article {
     grid-area: rain;
     background-color: #121212;
     border-radius: 10px;
-    display: flex; /* Ensure it's a flex container */
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
@@ -257,7 +281,7 @@ article {
 .forecast-items-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; /* Space items around evenly */
+  justify-content: space-around;
 }
 
 .forecast-item {
@@ -309,7 +333,7 @@ article {
 .forecast-title2 {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: center;
 }
 
 .forecast-divider2 {
@@ -328,25 +352,25 @@ article {
   
 .forecast-items-container2 {
     display: flex;
-    flex-direction: row; /* Change to row */
-    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
-    justify-content: space-around; /* Space items around evenly */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
   
 .forecast-item2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%; /* Adjust the width of each item to fit two items in a row */
+    width: 45%; /*fit two items in a row */
 }
   
 .forecast-item-text2 {
     font-weight: bold;
-    font-size: 1.2rem; /* Adjust size as needed */
+    font-size: 1.2rem; 
 }
   
 .forecast-item-icon2 {
-    width: 3rem; /* Adjust size as needed */
+    width: 3rem; 
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 }
@@ -457,8 +481,8 @@ article {
   }
   
   .weather-icon {
-    width: 6rem; /* Adjust size as needed */
-    height: 6rem; /* Adjust size as needed */
+    width: 6rem; 
+    height: 6rem;
   }
   
   .temperature {
@@ -526,3 +550,4 @@ align-items: center;
     gap: 1rem;
   }
 }
+

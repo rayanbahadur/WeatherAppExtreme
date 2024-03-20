@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 
 // API Key to access the WeatherAPI
-const API_KEY = "2042a88d3bdb435d80a162232240603";
+const API_KEY = "224f7d4a84344bd692a101708242003";
 
 // URL for WeatherAPI
 const BASE_URL = "http://api.weatherapi.com/v1";
