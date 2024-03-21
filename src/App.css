@@ -78,6 +78,7 @@ article {
   height: 98%;
   width: fit-content;
   padding-top: 1rem;
+  margin-bottom: 1rem;
   max-width: 100%;
   max-height: 98%;
 }
