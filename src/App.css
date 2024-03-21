@@ -82,7 +82,7 @@ article {
   max-width: 100%;
   max-height: 98%;
 }
-  
+/* Overview section */
 #overview {
   grid-area: overview;
   background-color: #02C73933;
@@ -132,7 +132,7 @@ article {
 
 }
 
-/* Styling for day and night backgrounds, using gradients for visual effect */
+/* Styling for day and night backgrounds */
 .day-background {
   grid-area: overview;
   background: linear-gradient(to right, #ff7e5f, #feb47b); /* Daytime gradient */
@@ -154,14 +154,14 @@ article {
   align-items: center;
   justify-content: center;
 }
-
+/* Styling for info section */
 #info {
     grid-area: info;
     background-color: #121212;
     border-radius: 10px;
     align-items: center;
 }
-
+/* Styling for forecast section */
 #forecast {
     grid-area: forecast;
     background-color: #28384e;
@@ -171,7 +171,7 @@ article {
     justify-content: center;
     align-items: center;
 }
-
+/* Styling for the hours section */
 #hours {
     grid-area: graph;
     background-color: #121212;
@@ -180,7 +180,7 @@ article {
     justify-content: center;
     padding: 1rem;
 }
-
+/* Styling for the someInfo section  */
 #someInfo {
     grid-area: rain;
     background-color: #121212;
@@ -190,7 +190,7 @@ article {
     align-items: center;
     padding: 1.5rem;
 }
-
+/* Styling for the future section */
 #future {
     grid-area: future;
     background-color: #28384e;
@@ -222,7 +222,7 @@ article {
     background-color: white;
     color: black;
 }
-
+/* Placement of the logIcon */
 .logIcon{
   padding-right: 5pt;
 }
@@ -236,7 +236,7 @@ article {
     margin-left: 10pt;
 }
 
-/*Details*/
+/*Styling for details section*/
 
 .detail-item {
     display: flex;
@@ -268,7 +268,7 @@ article {
   align-items: flex-start;
 }
     
-/*Forecast*/
+/* Styling for forecast section */
 
 .forecast-container {
     display: flex;
@@ -439,7 +439,7 @@ article {
   
   
   .input-wrapper input::placeholder {
-    color: #38506e; /* Placeholder text color */
+    color: #38506e;
   }
   
   .icon {
@@ -506,8 +506,8 @@ article {
 
 /* WeatherDetails */
 .weather-details {
-  display: flex; /* Add flex display */
-  flex-direction: column; /* Set flex direction to column */
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
   justify-content: space-between;
   align-items: center;
@@ -551,4 +551,3 @@ align-items: center;
     gap: 1rem;
   }
 }
-
