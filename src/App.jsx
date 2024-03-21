@@ -8,7 +8,7 @@ import Forecast from "./components/Forecast";
 import ForecastDaily from "./components/ForecastDaily";
 import { getFormattedWeatherData } from "./services/weatherService";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Map from "./components/Map";
 import Alerts from "./components/Alerts";
