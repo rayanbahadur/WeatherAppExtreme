@@ -1,4 +1,7 @@
 
+https://github.com/rayanbahadur/weather-app-extreme/assets/118920618/98c073e0-8a03-491c-a4b8-5d291339015b
+
+
 # Extreme Weather App
 
 ## Installation
